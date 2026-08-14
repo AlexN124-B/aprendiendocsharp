@@ -1,0 +1,33 @@
+# Carpetas de compilación
+bin/
+obj/
+
+# Carpetas de Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider (si alguna vez lo usas)
+.idea/
+*.sln.iml
+
+# NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+
+# Archivos de publicación
+publish/
+PublishProfiles/
+
+# Archivos de logs y temporales
+*.log
+*.tmp
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración local (si usas alguno)
+appsettings.Development.json
+*.local.json
