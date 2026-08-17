@@ -1,6 +1,7 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:proyecto_de_pruebas.ViewModels"
+        xmlns:models="using:proyecto_de_pruebas.Models"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
@@ -11,13 +12,22 @@
         Background="{Binding colorFondo}">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel />
+        <vm:MainViewModel/>
     </Design.DataContext>
 
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
         <Button Content="{Binding azul}" Click="Button_Click_azul"/>
         <Button Content="{Binding rojo}" Click="Button_Click_rojo"/>
+       
+        <ListBox ItemsSource="{Binding Personas}">
+            <ListBox.ItemTemplate>
+                <DataTemplate x:DataType="models:Persona">
+                    <StackPanel>
+                        <TextBlock Text="{Binding Nombre}" />
+                        <TextBlock Text="{Binding Edad}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </StackPanel>
 </Window>
