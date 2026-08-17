@@ -18,16 +18,21 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
         <Button Content="{Binding azul}" Click="Button_Click_azul"/>
         <Button Content="{Binding rojo}" Click="Button_Click_rojo"/>
-       
-        <ListBox ItemsSource="{Binding Personas}">
-            <ListBox.ItemTemplate>
+
+        <ItemsControl ItemsSource="{Binding Personas}" Background="White">
+            <ItemsControl.Styles>
+                <Style Selector="ItemsControl > ContentPresenter">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ItemsControl.Styles>
+            <ItemsControl.ItemTemplate>
                 <DataTemplate x:DataType="models:Persona">
-                    <StackPanel>
-                        <TextBlock Text="{Binding Nombre}" />
-                        <TextBlock Text="{Binding Edad}" />
-                    </StackPanel>
+                    <Button Content="{Binding ObtenerInformacion}"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            BorderThickness="0"/>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
     </StackPanel>
 </Window>
