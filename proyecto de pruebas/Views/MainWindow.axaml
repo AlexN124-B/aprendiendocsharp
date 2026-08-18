@@ -18,7 +18,7 @@
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10">
         <Button Content="{Binding azul}" Click="Button_Click_azul"/>
         <Button Content="{Binding rojo}" Click="Button_Click_rojo"/>
-        <Button Content="{Binding verde}" Click="Button_Click_verde"/> 
+        <Button Content="{Binding verde}: string" Click="Button_Click_verde"/> 
         
 
         <ItemsControl ItemsSource="{Binding Personas}" Background="White">

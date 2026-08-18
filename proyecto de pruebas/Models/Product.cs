@@ -2,15 +2,20 @@ namespace proyecto_de_pruebas.Models;
 
 public class Product
 {
-    public string Nombre { get; set; }
-    public int Edad { get; set; }
+    public int Id { get; set; }
+    public float Price { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public string Category { get; set; }
+    public int Stock { get; set; }
 
-    public string ObtenerInformacion { get; set; }
-
-    public Product(string nombre, int edad)
+    public Product(int Id, float Price, string Title, string Description, string Category, int Stock)
     {
-        Nombre = nombre;
-        Edad = edad;
-        ObtenerInformacion = $"Nombre: {Nombre} \nEdad: {Edad}";
+        this.Id = Id;
+        this.Price = Price;
+        this.Title = Title;
+        this.Description = Description;
+        this.Category = Category;
+        this.Stock = Stock;
     }
 }
