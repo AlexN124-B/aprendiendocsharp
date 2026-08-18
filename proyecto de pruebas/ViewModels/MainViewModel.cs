@@ -10,6 +10,8 @@ public partial class MainViewModel : ViewModelBase
     public partial string rojo { get; set; } = "Rojo";
     [ObservableProperty]
     public partial string azul{ get; set; } = "Azul";
+    [ObservableProperty]
+    public partial string verde { get; set; } = "Verde";
 
     [ObservableProperty]
     public partial string colorFondo { get; set; } = "white";

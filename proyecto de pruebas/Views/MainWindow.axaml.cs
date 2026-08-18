@@ -23,4 +23,11 @@ public partial class MainWindow : Window
             vm.colorFondo = "Red";
         }
     }
+    private void Button_Click_verde(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    {
+        if (DataContext is MainViewModel vm)
+        {
+            vm.colorFondo = "Green";
+        }
+    }
 }
