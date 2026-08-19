@@ -1,6 +1,7 @@
 # Carpetas de compilación
 bin/
 obj/
+./BBDD/.env
 
 # Carpetas de Visual Studio
 .vs/
