@@ -21,3 +21,6 @@ CREATE TABLE IF NOT EXISTS products (
 ) ENGINE=InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO products (price, title, description, category, stock)
+VALUES (19.99, 'Producto de prueba', 'Descripción de ejemplo para pruebas', 'General', 10);
