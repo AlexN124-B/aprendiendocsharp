@@ -2,6 +2,7 @@
 bin/
 obj/
 /BBDD/.env
+/api/.env
 
 # Carpetas de Visual Studio
 .vs/
