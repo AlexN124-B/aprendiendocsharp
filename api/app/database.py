@@ -1,5 +1,7 @@
 import os
+import time
 from sqlalchemy import create_engine
+from sqlalchemy.exc import OperationalError
 from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 
@@ -21,3 +23,14 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+def wait_for_db(max_retries: int = 10, delay: int = 2):
+    for attempt in range(1, max_retries + 1):
+        try:
+            with engine.connect():
+                return
+        except OperationalError:
+            print(f"BBDD no disponible todavía (intento {attempt}/{max_retries}), reintentando en {delay}s...")
+            time.sleep(delay)
+    raise RuntimeError("No se pudo conectar a la base de datos tras varios intentos")
